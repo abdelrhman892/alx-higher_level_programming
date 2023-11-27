@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 str1 = "Holberton"
 str2 = "School"
-print(f"Welcome to {str1} {str2}!")
+str3 = "Welcome"
+print(f"{str3} to {str1} {str2}!")
+

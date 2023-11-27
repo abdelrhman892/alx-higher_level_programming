@@ -1,1 +1,1 @@
-export PYFILE=main.py
+python main.py

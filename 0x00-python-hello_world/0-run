@@ -1,1 +1,1 @@
-cat main.py 
+export PYFILE=main.py

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-num = 0.0
+num = 1.0
 deletedNum = 1.0
 while int(num) <= 89:
     lastDigit = int(repr(int(num))[-1])

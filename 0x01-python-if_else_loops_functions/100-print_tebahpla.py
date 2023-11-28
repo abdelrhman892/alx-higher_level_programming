@@ -12,4 +12,4 @@ while num >= 65:
         con = 0
     num -= 1
 
-print(result)
+print("{}".format(result))

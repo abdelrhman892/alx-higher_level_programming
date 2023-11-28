@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def islower(c):
-    if 97 <= ord(c) <= 122:
-        print(f"{c} is lower")
+    if ord(c) >= 96 and ord(c) <= 122:
+        return 1

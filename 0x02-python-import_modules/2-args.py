@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-
-_input = input()
-argv = _input.split()
-arguments = len(argv)
-num = 1
-if arguments != 0:
-    print("{} arguments:".format(arguments))
-    for i in argv:
-        print("{}: {}".format(num, i))
-        num += 1
-else:
-    print("0 arguments.")
+if __name__ == "__main__":
+    import sys
+    
+    arguments = len(sys.argv) - 1
+    num = 1
+    if arguments != 0:
+        print("{} arguments:".format(arguments))
+        for i in range (arguments):
+            print("{}: {}".format(num, sys.argv[i + 1]))
+            num += 1
+    elif arguments == 0:
+        print("0 arguments.")

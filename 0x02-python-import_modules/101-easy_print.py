@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import 101-easy
+import 101-easy_P

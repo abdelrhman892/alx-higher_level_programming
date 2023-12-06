@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 def multiply_by_2(a_dictionary):
-    a_dictionary = a_dictionary.copy()
-    b_dictionary = a_dictionary
-    b_dictionary.update((key, value * 2) for key, value in b_dictionary.items())
+    b_dictionary = {}
+
+    for key, value in a_dictionary.items():
+        if isinstance(value, (int, float)):
+            b_dictionary[key] = value * 2
+        else:
+            return None
+
     return b_dictionary

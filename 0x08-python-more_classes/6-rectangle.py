@@ -5,22 +5,23 @@ Rectangle class
 
 
 class Rectangle:
-    """nothing"""
+    """Nothing"""
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
-        """nothing"""
+        """Nothing"""
         Rectangle.number_of_instances += 1
         self.height = height
         self.width = width
 
     @property
     def width(self):
-        """nothing"""
+        """Nothing"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """nothing"""
+        """Nothing"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -29,12 +30,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """nothing"""
+        """Nothing"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """nothing"""
+        """Nothing"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -42,28 +43,28 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """nothing"""
+        """Nothing"""
         return self.__height * self.__width
 
     def perimeter(self):
-        """nothing"""
+        """Nothing"""
         if self.__height == 0 or self.__width == 0:
             return 0
         else:
             return (self.__height + self.__width) * 2
 
     def __str__(self):
-        """nothing"""
+        """Nothing"""
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
             return '\n'.join(['#' * self.__width] * self.__height)
 
     def __repr__(self):
-        """nothing"""
-        return f"Rectangle{eval('(self.width, self.height)')}"
+        """Nothing"""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """nothing"""
+        """Nothing"""
         print('Bye rectangle...')
         Rectangle.number_of_instances -= 1

@@ -1,53 +1,37 @@
 #!/usr/bin/python3
 import sys
 
-def print_usage_and_exit():
+def is_safe(board, row, col, N):
+    # Check if there is a queen in the same column
+    for i in range(row):
+        if board[i] == col or \
+           board[i] - i == col - row or \
+           board[i] + i == col + row:
+            return False
+    return True
 
-    # Print the correct usage and exit with status 1
-    print("Usage: nqueens N")
-    sys.exit(1)
-
-def solve_nqueens(N, queens, row):
-    # Base case: If all queens are placed, print the solution
+def solve_nqueens(board, row, N, solutions):
     if row == N:
-        print(queens)
-        return
+        solutions.append([[i, board[i]] for i in range(N)])
+    else:
+        for col in range(N):
+            if is_safe(board, row, col, N):
+                board[row] = col
+                solve_nqueens(board, row + 1, N, solutions)
 
-    # Recursive case: Try placing a queen in each column of the current row
-    for col in range(N):
-        # Check if placing a queen at the current position is valid
-        valid = all(
-            col != queen[1] and
-            abs(row - queen[0]) != abs(col - queen[1])
-            for queen in queens
-        )
-
-        # If valid, place the queen and move on to the next row
-        if valid:
-            queens.append([row, col])
-            solve_nqueens(N, queens, row + 1)
-            queens.pop()
-
-def main():
-    # Check if the correct number of arguments is provided
-    if len(sys.argv) != 2:
-        print_usage_and_exit()
-
-    try:
-        # Parse N from the command line argument
-        N = int(sys.argv[1])
-    except ValueError:
-        # If N is not an integer, print an error message and exit
+def nqueens(N):
+    if not N.isdigit():
         print("N must be a number")
         sys.exit(1)
 
-    # Check if N is greater than or equal to 4
+    N = int(N)
     if N < 4:
         print("N must be at least 4")
         sys.exit(1)
 
-    # Initialize an empty list to store the queen positions
-    queens = []
+    board = [-1] * N
+    solutions = []
+    solve_nqueens(board, 0, N, solutions)
 
-    # Start solving the N queens problem
-    solve_nqueens(N, queens, 0)
+    for solution in solutions:
+        print(solution)

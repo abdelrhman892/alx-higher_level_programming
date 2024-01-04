@@ -8,7 +8,6 @@ class Rectangle:
     """Nothing"""
     number_of_instances = 0
     print_symbol = "#"
-
     def __init__(self, width=0, height=0):
         """Nothing"""
         Rectangle.number_of_instances += 1
@@ -87,4 +86,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """Return a new Rectangle instance with width == height == size"""
         return cls(size, size)

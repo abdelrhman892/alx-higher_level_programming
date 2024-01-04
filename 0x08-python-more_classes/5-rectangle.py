@@ -6,7 +6,6 @@ Rectangle class
 
 class Rectangle:
     """nothing"""
-
     def __init__(self, width=0, height=0):
         """nothing"""
         self.height = height
@@ -65,4 +64,3 @@ class Rectangle:
     def __del__(self):
         """nothing"""
         print('Bye rectangle...')
-    

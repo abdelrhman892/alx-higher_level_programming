@@ -1,3 +1,9 @@
 #!/usr/bin/python3
+"""nothing"""
+
+
 class LockedClass:
-    __slots__ = ('first_name',)
+    """
+    nothing
+    """
+    __slots__ = ["first_name"]

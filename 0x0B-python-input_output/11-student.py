@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Library for"""
 
+
 class Student:
     """None"""
 

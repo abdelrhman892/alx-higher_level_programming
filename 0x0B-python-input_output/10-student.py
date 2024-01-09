@@ -25,4 +25,4 @@ class Student:
         for key, value in self.__dict__.items():
             if key in attrs:
                 my_dick[key] = value
-                return my_dick
+        return my_dick

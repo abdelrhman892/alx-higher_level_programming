@@ -1,10 +1,15 @@
 #!/usr/bin/python3
-"""None"""
+"""
+    None
+"""
+
+
 import json
 
 
 def save_to_json_file(my_obj, filename):
-    """None"""
-    data = json.dumps(my_obj)
-    with open(filename, mode='w', encoding='utf-8') as jsonFile:
-        jsonFile.write(data)
+    """
+        writes an object to a text file using JSON
+    """
+    with open(filename, "w") as j_file:
+        json.dump(my_obj, j_file)

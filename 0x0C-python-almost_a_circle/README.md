@@ -1,6 +1,4 @@
-Review of <li>::marker
-              "Import"
-          </li>
+Review of <li>"Import"</li>
           Exceptions
 Class
 Private attribute

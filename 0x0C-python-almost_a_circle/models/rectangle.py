@@ -85,11 +85,10 @@ class Rectangle(Base):
         return self.__width * self.height
 
     def display(self):
-        if self.x >= 2:
-            for i in range(self.x):
-                print()
+        for i in range(self.y):
+            print()
         for L in range(self.height):
-            for c in range(self.y):
+            for c in range(self.x):
                 print(" ", end='')
             for W in range(self.width):
                 print('#', end='')
@@ -99,7 +98,7 @@ class Rectangle(Base):
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
                 f" - {self.width}/{self.height}")
 
-        # def update(self, *args, **kwargs):
+    # def update(self, *args, **kwargs):
     #     for key, value in kwargs.items():
     #         if key == 'id':
     #             self.id = value

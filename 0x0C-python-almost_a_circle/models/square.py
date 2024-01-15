@@ -26,24 +26,6 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        # for key, value in kwargs.items():
-        #     if key == 'id':
-        #         self.id = value
-        #     if key == 'size':
-        #         self.size = value
-        #     if key == 'x':
-        #         self.x = value
-        #     if key == 'y':
-        #         self.y = value
-        # for arg in range(len(args)):
-        #     if arg == 0:
-        #         self.id = args[arg]
-        #     if arg == 1:
-        #         self.size = args[arg]
-        #     if arg == 2:
-        #         self.x = args[arg]
-        #     if arg == 3:
-        #         self.y = args[arg]
         attribute_mapping = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
 
         for key, value in kwargs.items():

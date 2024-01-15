@@ -99,7 +99,8 @@ class Rectangle(Base):
                 f" - {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
-        attribute_mapping = {'id': self.id, 'height': self.height, 'width': self.width, 'x': self.x, 'y': self.y}
+        attribute_mapping = {'id': self.id, 'height': self.height,
+                             'width': self.width, 'x': self.x, 'y': self.y}
 
         for key, value in kwargs.items():
             if key in attribute_mapping:
@@ -108,3 +109,7 @@ class Rectangle(Base):
         for arg, key in enumerate(('id', 'width', 'height', 'x', 'y')):
             if arg < len(args):
                 setattr(self, key, args[arg])
+
+    def to_dictionary(self):
+        return {'x': self.__x, 'y': self.__y, 'id': self.id,
+                'height': self.__height, 'width': self.__width}

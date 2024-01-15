@@ -98,30 +98,6 @@ class Rectangle(Base):
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
                 f" - {self.width}/{self.height}")
 
-    # def update(self, *args, **kwargs):
-    #     for key, value in kwargs.items():
-    #         if key == 'id':
-    #             self.id = value
-    #         if key == 'height':
-    #             self.height = value
-    #         if key == 'width':
-    #             self.width = value
-    #         if key == 'x':
-    #             self.x = value
-    #         if key == 'y':
-    #             self.y = value
-    #     for arg in range(len(args)):
-    #         if arg == 0:
-    #             self.id = args[arg]
-    #         if arg == 1:
-    #             self.__width = args[arg]
-    #         if arg == 2:
-    #             self.__height = args[arg]
-    #         if arg == 3:
-    #             self.__x = args[arg]
-    #         if arg == 4:
-    #             self.__y = args[arg]
-
     def update(self, *args, **kwargs):
         attribute_mapping = {'id': self.id, 'height': self.height, 'width': self.width, 'x': self.x, 'y': self.y}
 

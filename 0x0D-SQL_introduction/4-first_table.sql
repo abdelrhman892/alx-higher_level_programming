@@ -1,5 +1,6 @@
--- create table with some data
-CREATE TABLE IF EXISTS first_table(
-	id INT,
-	name varchar(256)
-)
+USE hbtn_0c_0;
+
+CREATE TABLE IF NOT EXISTS first_table (
+    id INT,
+    name VARCHAR(256)
+);

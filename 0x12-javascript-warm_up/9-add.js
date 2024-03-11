@@ -2,7 +2,7 @@
 function add (a, b) {
   if (a === undefined || b === undefined) {
     console.log('NaN');
-  }else {
+  } else {
     console.log(Number(a) + Number(b));
   }
 }

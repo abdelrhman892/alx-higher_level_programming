@@ -9,6 +9,9 @@ conn = MySQLdb.connect(
     database=sys.argv[3]
 )
 cursor = conn.cursor()
-cursor.execute("SELECT * FROM states")
+cursor.execute("SELECT * FROM states ORDER BY id ASC")
 for state in cursor.fetchall():
     print(state)
+
+cursor.close()
+conn.close()

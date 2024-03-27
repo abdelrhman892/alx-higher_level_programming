@@ -1,3 +1,3 @@
 #!/bin/bash
-# Take in URL, send DELETE request and display response body
-curl -sX DELETE "$1"
+# Take in URL and display body of a 200 response
+curl -sL "$1"

@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 """
-Module 4-hbtn-status
-Fetches https://intranet.hbtn.io/status
+takes in a URL, sends a request to the URL 
+and displays the body of the response (decoded in utf-8).
 """
-import requests
+mport urllib.request
+from sys import argv
+import urllib.parse
+
 
 if __name__ == "__main__":
-    req = requests.get('https://alx-intranet.hbtn.io/status')
-    print('Body response:')
-    print("\t- type: {}".format(type(req.text)))
-    print("\t- content: {}".format(req.text))
+    try:
+        with urllib.request.urlopen(argv[1]) as rsp:
+            print(rsp.read().decode())
+    except urllib.error.URLError as e:
+        print("Error code: {}".format(e.code))

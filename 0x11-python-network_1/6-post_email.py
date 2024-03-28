@@ -8,9 +8,8 @@ and finally displays the body of the response
 import requests
 from sys import argv
 
-
 if __name__ == "__main__":
-    url = argv[1]
-    payload = {'email': argv[2]}
-    r = requests.post(url, data=payload)
-    print(r.text)
+    URL = argv[1]
+    pay_load = {'email': argv[2]}
+    req = requests.post(URL, data=pay_load)
+    print(req.text)

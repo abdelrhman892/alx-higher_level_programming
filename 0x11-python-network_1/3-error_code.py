@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
-takes in a URL, sends a request to the URL 
-and displays the body of the response (decoded in utf-8)
+Module 4-hbtn-status
+Fetches https://intranet.hbtn.io/status
 """
-import requests
 
+
+import requests
 
 if __name__ == "__main__":
     r = requests.get('https://alx-intranet.hbtn.io/status')

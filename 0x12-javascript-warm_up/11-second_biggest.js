@@ -2,7 +2,6 @@
 const args = process.argv.slice(2);
 let arrOfNum = []
 const num = parseInt(args, 10);
-let bigNum = 0;
 if (args.length < 1){
     console.log(0);
 } else if (args.length === 1 && num === 1){

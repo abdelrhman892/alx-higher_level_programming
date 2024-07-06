@@ -1,33 +1,32 @@
 #!/usr/bin/node
 
-const request = require('request');
+let fs = require('fs');
+let request = require('request');
+let args = process.argv.slice(2);
+let arrUserId = [];
+let arrId = [];
 
-const apiUrl = process.argv[2];
-
-request(apiUrl, function (error, response, body) {
-  if (!error && response.statusCode === 200) {
-    try {
-      const todos = JSON.parse(body);
-
-      const completed = {};
-
-      todos.forEach((todo) => {
-        if (todo.completed) {
-          if (completed[todo.userId] === undefined) {
-            completed[todo.userId] = 1;
-          } else {
-            completed[todo.userId]++;
-          }
+let obj = {};
+request(args[0], function (error, response, body) {
+    if (error) console.error(error);
+    else {
+        let data = JSON.parse(body);
+        for (let i of data){
+            if (i.completed === true){
+                arrUserId.push(i.userId);
+            }
         }
-      });
-
-      const output = `{${Object.entries(completed).map(([key, value]) => ` '${key}': ${value}`).join(',\n ')} }`;
-
-      console.log(Object.keys(completed).length > 2 ? output : completed);
-    } catch (parseError) {
-      console.error('Error parsing JSON:', parseError);
+        for (let i of data){
+            if (i.completed === true){
+                arrId.push(i.id);
+            }
+        }
+        for (let i in arrUserId){
+            obj[`${i}`] = arrUserId[i];
+        }
+        for (let i in arrId){
+            obj[`${i}`] = arrId[i];
+        }
+        console.log(obj);
     }
-  } else {
-    console.error('Error:', error);
-  }
 });
